@@ -52,6 +52,7 @@ public class ListController {
 
     }
 
+    //allows user to click a link to view jobs by column and value
     @RequestMapping(value = "jobs")
     public String listJobsByColumnAndValue(Model model,
             @RequestParam String column, @RequestParam String value) {

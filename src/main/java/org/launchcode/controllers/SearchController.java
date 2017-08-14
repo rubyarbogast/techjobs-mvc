@@ -22,6 +22,11 @@ public class SearchController {
         return "search";
     }
 
-    // TODO #1 - Create handler to process search request and display results
-
+    /** TODO #1 - Create handler to process search request and display results
+     * features must be named based on corresponding form field names
+     * use the correct annotations for the method and parameters
+     * refer to the form action in search.html to configure the correct mapping route
+     * after looking up search results via JobData class, pass them into search.html view via the model
+     * pass ListController.columnChoices to the view, as existing search handler does
+     */
 }
