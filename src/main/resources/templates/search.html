@@ -41,6 +41,15 @@
     add the class "job-listing" to each of the tables for styling
     -->
 
+    <table class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="field : ${job}">
+            <td th:text="${field.key}">Key</td>
+            <td th:text="${field.value}">Value</td>
+        </tr>
+
+    </table>
+
+
 </div>
 
 </body>
