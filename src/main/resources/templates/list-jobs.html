@@ -16,7 +16,15 @@
     NOTE for the fragment to work, the data passed into the view via model.addAttribute()
     must have the same key in both places
     -->
-
+    <table th:replace="search :: results"></table>
+    <!--
+    <table th:fragment="results" class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="field : ${job}">
+            <td th:text="${#strings.capitalizeWords(field.key)}"></td>
+            <td th:text="${field.value}"></td>
+        </tr>
+    </table>
+    -->
 </div>
 
 </body>

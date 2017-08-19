@@ -44,9 +44,7 @@ public class SearchController {
                          @RequestParam String searchTerm, @RequestParam String searchType) {
         // look up the search results via the JobData class -- use findByValue
         ArrayList<HashMap<String, String>> jobs;
-        //if searchType is all, use JobData.findByValue
-        //else, use findByColumnAndValue
-        //is "all" the right thing to use?
+
         if(searchType.equals("all")) {
             jobs = JobData.findByValue(searchTerm);
         } else {
