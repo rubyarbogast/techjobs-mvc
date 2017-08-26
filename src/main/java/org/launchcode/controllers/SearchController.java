@@ -18,7 +18,10 @@ public class SearchController {
 
     @RequestMapping(value = "")
     public String search(Model model) {
+        String searchType = "all"; //so that all columns will be searched if nothing else is selected
+
         model.addAttribute("columns", ListController.columnChoices);
+        model.addAttribute("searchType", searchType);
         return "search";
     }
 
@@ -51,10 +54,12 @@ public class SearchController {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
 
+        System.out.println(searchType);
+
         // pass to search view:
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("jobs", jobs);
-
+        model.addAttribute("searchType", searchType);
         return "search";
 
     }
