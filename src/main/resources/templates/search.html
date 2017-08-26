@@ -39,7 +39,13 @@
     <table th:fragment="results" class="job-listing" th:each="job : ${jobs}">
         <tr th:each="field : ${job}">
             <td th:text="${#strings.capitalizeWords(field.key)}"></td>
-            <td th:text="${field.value}"></td>
+
+            <td th:text="${field.value}">
+                <a
+                   th:unless="${field.key} == 'name'"
+                   th:href="@{/search/results(searchType='all', searchTerm=${field.value})}">
+                </a>
+            </td>
         </tr>
     </table>
 
