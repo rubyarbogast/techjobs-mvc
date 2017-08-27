@@ -36,6 +36,10 @@
 
     <hr />
 
+    <!-- if there's content in jobs, display # search results-->
+    <h3 th:if="${jobs} and ${jobs.size() == 0}">No results found</h3>
+    <h3 th:if="${jobs} and ${jobs.size()}" th:text="${jobs.size()} + ' result(s)'"></h3>
+
     <table th:fragment="results" class="job-listing" th:each="job : ${jobs}">
         <tr th:each="field : ${job}">
             <td th:text="${#strings.capitalizeWords(field.key)}"></td>
