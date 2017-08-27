@@ -40,11 +40,14 @@
         <tr th:each="field : ${job}">
             <td th:text="${#strings.capitalizeWords(field.key)}"></td>
 
-            <td th:text="${field.value}">
+            <td>
                 <a
                    th:unless="${field.key} == 'name'"
-                   th:href="@{/search/results(searchType='all', searchTerm=${field.value})}">
+                   th:href="@{/search/results(searchType='all', searchTerm=${field.value})}"
+                   th:text="${field.value}">
                 </a>
+                <span th:if="${field.key} == 'name'"
+                      th:text="${field.value}"></span>
             </td>
         </tr>
     </table>
